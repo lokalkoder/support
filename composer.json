@@ -26,6 +26,11 @@
         "classmap": [],
         "files": []
     },
+    "scripts": {
+        "testing": [
+            "vendor/bin/phpunit tests --coverage-clover clover.xml"
+        ]
+    },
     "extra": {
         "laravel": {
             "providers": [
