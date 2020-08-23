@@ -1,4 +1,4 @@
-name: Webhook Installation Validation
+name: LokalKoder Support Installation Validation
 
 on:
   push:

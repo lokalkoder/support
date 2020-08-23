@@ -26,6 +26,11 @@
         "classmap": [],
         "files": []
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Lokalkoder\\Support\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "testing": [
             "vendor/bin/phpunit tests --coverage-clover clover.xml"
