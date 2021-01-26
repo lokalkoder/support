@@ -56,11 +56,11 @@ class Hasher
 
     /**
      * Check hasher.
-     * 
+     *
      * @param string $hasher
-     * @return string
+     * @return bool
      */
-    public function checkHasher(string $hasher): string
+    public function checkHasher(string $hasher): bool
     {
         return hash_equals($hasher, $this->getHasher());
     }
