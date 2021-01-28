@@ -57,10 +57,10 @@ class Hasher
     /**
      * Check hasher.
      *
-     * @param string $hasher
+     * @param string|null $hasher
      * @return bool
      */
-    public function checkHasher(string $hasher): bool
+    public function checkHasher(?string $hasher): bool
     {
         return hash_equals($hasher, $this->getHasher());
     }
