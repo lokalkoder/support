@@ -62,6 +62,6 @@ class Hasher
      */
     public function checkHasher(?string $hasher): bool
     {
-        return hash_equals($hasher, $this->getHasher());
+        return ($hasher !== null) ? hash_equals($hasher, $this->getHasher()) : false;
     }
 }
