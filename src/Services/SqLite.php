@@ -38,7 +38,23 @@ class SqLite
     {
         return $this->connection->table($table);
     }
-    
+
+    /**
+     * Check table exist.
+     *
+     * @param string $table
+     * @return bool
+     */
+    public function hasTable(string $table): bool
+    {
+         $bil = $this->connection
+            ->selectOne(
+                "select count(*) as bil from sqlite_master where type='table' AND name='" . $table ."'"
+            );
+
+         return (bool) $bil->bil;
+    }
+
     /**
      * SQLite connection configs.
      *

@@ -2,6 +2,8 @@
 
 namespace Lokalkoder\Support\Services\Storage;
 
+use Illuminate\Database\Eloquent\Builder;
+
 class DataStorage
 {
     /**
