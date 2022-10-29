@@ -4,7 +4,7 @@ namespace Lokalkoder\Support\Services;
 
 class Hasher
 {
-    const SPONGE = '2881';
+    public const SPONGE = '2881';
 
     /**
      * @var string|null

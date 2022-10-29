@@ -11,7 +11,7 @@ trait ShortCodeGenerator
      * @param string|null $code
      * @return string
      */
-    public function decideReferenceCode(string $description, ?string $code):string
+    public function decideReferenceCode(string $description, ?string $code): string
     {
         $ref = $this->generateShortCode($description);
 

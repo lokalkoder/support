@@ -11,6 +11,7 @@ use Illuminate\Database\PostgresConnection;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Database\SqlServerConnection;
 use Illuminate\Support\Arr;
+use Lokalkoder\Support\Exceptions\InvalidArgument;
 
 class ConnectionManager
 {
@@ -19,14 +20,14 @@ class ConnectionManager
      *
      * @var array
      */
-    protected  $config;
+    protected $config;
 
     /**
      * Connection driver eg: mysql, pgsql, sqlite, sqlsrv
      *
      * @var string
      */
-    protected  $driver;
+    protected $driver;
 
     /**
      * ConnectionManager constructor.
@@ -90,7 +91,7 @@ class ConnectionManager
                 );
         }
 
-        throw new InvalidArgumentException("Unsupported driver [{$this->driver}].");
+        throw new InvalidArgument("Unsupported driver [{$this->driver}].");
     }
 
     /**
@@ -100,16 +101,12 @@ class ConnectionManager
      */
     protected function getConnector()
     {
-        switch ($this->driver) {
-            case 'mysql':
-                return (new MySqlConnector());
-            case 'pgsql':
-                return new PostgresConnector();
-            case 'sqlite':
-                return new SQLiteConnector();
-            case 'sqlsrv':
-                return new SqlServerConnector();
-        }
+        return match ($this->driver) {
+            'mysql' => new MySqlConnector(),
+            'pgsql' => new PostgresConnector(),
+            'sqlsrv' => new SqlServerConnector(),
+            default => new SQLiteConnector(),
+        };
     }
 
     /**
@@ -120,7 +117,7 @@ class ConnectionManager
     protected function getDriver(): string
     {
         if (! isset($this->config['driver'])) {
-            throw new InvalidArgumentException('A driver must be specified.');
+            throw new InvalidArgument('A driver must be specified.');
         }
 
         return $this->config['driver'];

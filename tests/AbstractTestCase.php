@@ -8,7 +8,6 @@ use Orchestra\Testbench\TestCase;
 
 abstract class AbstractTestCase extends TestCase
 {
-
     /** Get property value */
     protected function getPropertyValue($class, string $propertyName)
     {
@@ -21,9 +20,9 @@ abstract class AbstractTestCase extends TestCase
     protected function accessProperty(string $classname, string $propertyName): ReflectionProperty
     {
         $reflector = new ReflectionClass($classname);
-        
+
         $property = $reflector->getProperty($propertyName);
-        
+
         $property->setAccessible(true);
 
         return $property;

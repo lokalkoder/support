@@ -1,4 +1,5 @@
 <?php
+
 namespace Lokalkoder\Support\Traits;
 
 use Illuminate\Http\Request;

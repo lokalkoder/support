@@ -1,4 +1,5 @@
 <?php
+
 namespace Lokalkoder\Support\Services\Cells;
 
 use Illuminate\Support\Collection;

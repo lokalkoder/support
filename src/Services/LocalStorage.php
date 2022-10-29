@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class LocalStorage
 {
-    const LOCAL_PATH = 'lokalkoder';
+    public const LOCAL_PATH = 'lokalkoder';
 
     private $path;
 
@@ -25,7 +25,7 @@ class LocalStorage
 
     /**
      * Check path is exist.
-     * 
+     *
      * @param string $filename
      * @param bool $public
      * @return bool

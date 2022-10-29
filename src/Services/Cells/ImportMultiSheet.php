@@ -1,4 +1,5 @@
 <?php
+
 namespace Lokalkoder\Support\Services\Cells;
 
 use ReflectionClass;
@@ -7,7 +8,6 @@ use Maatwebsite\Excel\Concerns\ToArray;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
-use Lokalkoder\Support\Services\Cells\CollectionSheet;
 
 class ImportMultiSheet implements WithMultipleSheets
 {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Lokalkoder\Support;
 
 use Illuminate\Support\ServiceProvider;

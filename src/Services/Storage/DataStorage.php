@@ -2,7 +2,10 @@
 
 namespace Lokalkoder\Support\Services\Storage;
 
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\MySqlConnection;
+use Illuminate\Database\PostgresConnection;
+use Illuminate\Database\SQLiteConnection;
+use Illuminate\Database\SqlServerConnection;
 
 class DataStorage
 {
@@ -45,10 +48,7 @@ class DataStorage
     /**
      * Request connection class.
      *
-     * @return \Illuminate\Database\MySqlConnection|
-     *         \Illuminate\Database\PostgresConnection|
-     *         \Illuminate\Database\SQLiteConnection|
-     *         \Illuminate\Database\SqlServerConnection
+     * @return MySqlConnection|PostgresConnection|SQLiteConnection|SqlServerConnection
      */
     public function connection()
     {

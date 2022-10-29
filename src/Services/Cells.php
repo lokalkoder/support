@@ -1,4 +1,5 @@
 <?php
+
 namespace Lokalkoder\Support\Services;
 
 use Maatwebsite\Excel\Facades\Excel;
@@ -22,7 +23,7 @@ class Cells
         } else {
             $sheet = [$worksheets => $formatter];
         }
-        
+
         return (Excel::toCollection(new ImportMultiSheet($sheet), $this->source))->first();
     }
 
