@@ -2,7 +2,7 @@ name: PHPStan
 
 on:
   push:
-    branches: [ 1.x ]
+    branches: [ 2.x ]
   pull_request:
     branches: [ master ]
 
@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         operating-system: ['ubuntu-latest', 'macos-latest']
-        php-versions: ['7.4']
+        php-versions: ['8.0', '8.1']
         phpunit-versions: ['latest']
 
     steps:
