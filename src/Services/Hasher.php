@@ -29,7 +29,7 @@ class Hasher
     {
         $this->salted = $salted;
 
-        $this->hashPayload = $payload.$salt . self::SPONGE . $salted;
+        $this->hashPayload = $payload.$salt . config('lokalsupport.hasher.sponge', self::SPONGE) . $salted;
     }
 
     /**
