@@ -22,7 +22,11 @@ class SupportProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $dir = dirname(__DIR__);
+
+        $this->publishes([
+            $dir.'/resources/config/lokalsupport.php' => config_path('lokalsupport.php'),
+        ], 'config');
     }
 
     /**
